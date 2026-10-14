@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.pyc
+
+# OS / 에디터
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+.idea/
+
+# Claude Code 개인 설정
+.claude/settings.local.json

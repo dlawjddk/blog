@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="마크다운으로 쓰는 개인 블로그">
+  <meta name="theme-color" content="#ffffff">
+  <title>블로그</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <!-- 깜빡임 방지: CSS보다 먼저 저장된 테마를 적용 -->
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        if (saved === 'light' || saved === 'dark') {
+          document.documentElement.setAttribute('data-theme', saved);
+        }
+      } catch (e) { /* 저장소 접근 불가 시 시스템 설정을 따름 */ }
+    })();
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="site-header__title" href="#/">블로그</a>
+      <nav class="site-header__nav" aria-label="주요 메뉴">
+        <a class="site-header__link" href="#/">글 목록</a>
+        <button class="theme-toggle" type="button" aria-label="다크 모드로 전환">
+          <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4.5"/>
+            <path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/>
+          </svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container" tabindex="-1">
+    <p class="status">불러오는 중…</p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>마크다운으로 쓰고, HTML·CSS·JavaScript로 보여줍니다.</p>
+    </div>
+  </footer>
+
+  <noscript>
+    <p class="container status">이 블로그는 JavaScript가 필요합니다.</p>
+  </noscript>
+</body>
+</html>
