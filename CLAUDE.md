@@ -129,6 +129,16 @@ description: 목록에 보일 짧은 요약
 - 바로가기 다시 만들기: `powershell -ExecutionPolicy Bypass -File make-shortcut.ps1`
   (이 스크립트는 한글 문자열 때문에 **UTF-8 BOM**으로 저장해야 Windows PowerShell 5.1에서 정상 동작합니다.)
 
+## 배포 (GitHub Pages)
+
+- 저장소: https://github.com/dlawjddk/blog
+- 사이트: https://dlawjddk.github.io/blog/
+- `main` 브랜치 루트(`/`)에서 바로 배포됩니다. `main`에 push하면 1~2분 뒤 반영됩니다.
+- `.nojekyll`을 지우지 마세요. 없으면 Jekyll이 front matter가 있는 `.md`를 HTML로 바꿔 버려 글을 불러오지 못합니다.
+- GitHub Pages에서는 `serve.py`가 돌지 않으므로 커밋된 `posts/index.json`이 그대로 쓰입니다.
+  새 글을 커밋하기 전에 `python serve.py --no-browser`로 한 번 실행(또는 바탕화면 아이콘으로 열기)해 `index.json`을 갱신하세요.
+- 사이트가 `/blog/` 하위 경로에서 서비스되므로, 경로는 항상 상대 경로(`css/style.css`, `posts/...`)로 씁니다. `/`로 시작하는 절대 경로는 금지합니다.
+
 ## 변경 후 확인 사항
 
 변경 후에는 브라우저에서 직접 확인하세요:
